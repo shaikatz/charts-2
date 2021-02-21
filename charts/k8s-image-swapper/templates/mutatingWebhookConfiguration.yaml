@@ -6,6 +6,7 @@ metadata:
     {{- include "k8s-image-swapper.labels" . | nindent 4 }}
 webhooks:
   - name: k8s-image-swapper.github.io
+    reinvocationPolicy: IfNeeded
     failurePolicy: {{ .Values.webhook.failurePolicy }}
     rules:
       - apiGroups:
